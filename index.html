@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neo Sensi - Gerador VIP de Sensibilidade</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts Inter e Orbitron -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&family=Orbitron:wght@600;800;900&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        neonOrange: '#FF5500',
+                        neonOrangeGlow: '#FF7700',
+                        darkBg: '#09090b',
+                        cardBg: '#121217',
+                        cardBorder: '#272730',
+                        neonCyan: '#00F0FF',
+                        neonGreen: '#00FF66'
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        tech: ['Orbitron', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Neon Glow Effects */
+        .glow-orange {
+            text-shadow: 0 0 10px rgba(255, 85, 0, 0.7), 0 0 20px rgba(255, 85, 0, 0.5), 0 0 30px rgba(255, 85, 0, 0.3);
+        }
+        .box-glow-orange {
+            box-shadow: 0 0 15px rgba(255, 85, 0, 0.25), inset 0 0 15px rgba(255, 85, 0, 0.1);
+        }
+        .box-glow-orange-lg {
+            box-shadow: 0 0 30px rgba(255, 85, 0, 0.4);
+        }
+        .border-glow {
+            border-color: rgba(255, 85, 0, 0.5);
+        }
+        /* Gradient Background Lines */
+        .bg-grid {
+            background-size: 30px 30px;
+            background-image: 
+                linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+        }
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #09090b;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #FF5500;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body class="bg-darkBg text-gray-100 font-sans min-h-screen bg-grid flex flex-col justify-between selection:bg-neonOrange selection:text-black">
+
+    <!-- Header / Navbar -->
+    <header class="border-b border-cardBorder/60 bg-darkBg/80 backdrop-blur-md sticky top-0 z-40">
+        <div class="max-w-6xl mx-auto px-4 py-4 flex flex-wrap justify-between items-center gap-4">
+            <!-- Logo Neo Sensi -->
+            <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-neonOrange to-red-600 flex items-center justify-center shadow-lg shadow-neonOrange/30">
+                    <i class="fa-solid font-tech text-black font-black text-xl">NS</i>
+                </div>
+                <div>
+                    <h1 class="font-tech text-2xl md:text-3xl font-extrabold tracking-wider text-transparent bg-clip-text bg-gradient-to-r from-neonOrange via-orange-400 to-yellow-500 glow-orange">
+                        NEO SENSI
+                    </h1>
+                    <p class="text-[10px] text-gray-400 font-mono tracking-widest uppercase">VIP Sensitivity Engine</p>
+                </div>
+            </div>
+
+            <!-- Links de Contato / Suporte -->
+            <div class="flex items-center gap-3">
+                <a href="https://www.instagram.com/ravvziin/" target="_blank" rel="noopener noreferrer" class="px-3 py-1.5 rounded-lg bg-cardBg border border-cardBorder hover:border-neonOrange/50 transition-all text-xs font-semibold flex items-center gap-2 text-gray-300 hover:text-neonOrange">
+                    <i class="fa-brands fa-instagram text-neonOrange text-sm"></i>
+                    <span>Dono</span>
+                </a>
+                <a href="https://www.instagram.com/ronaldoxz_qzx/" target="_blank" rel="noopener noreferrer" class="px-3 py-1.5 rounded-lg bg-cardBg border border-cardBorder hover:border-neonOrange/50 transition-all text-xs font-semibold flex items-center gap-2 text-gray-300 hover:text-neonOrange">
+                    <i class="fa-brands fa-instagram text-neonOrange text-sm"></i>
+                    <span>Suporte</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="max-w-4xl mx-auto px-4 py-8 w-full flex-grow">
+
+        <!-- Banner VIP -->
+        <div class="mb-8 p-6 rounded-2xl bg-cardBg border border-neonOrange/30 box-glow-orange text-center relative overflow-hidden">
+            <div class="absolute -right-10 -bottom-10 w-40 h-40 bg-neonOrange/10 rounded-full blur-3xl pointer-events-none"></div>
+            <span class="px-3 py-1 rounded-full text-[11px] font-bold uppercase tracking-wider bg-neonOrange/20 text-neonOrange border border-neonOrange/30 inline-block mb-3">
+                <i class="fa-solid fa-bolt mr-1"></i> Sistema Anti-Recuo & Subida de Capa
+            </span>
+            <h2 class="text-2xl md:text-4xl font-extrabold font-tech text-white mb-2">
+                GERADOR DE SENSI PERFEITA
+            </h2>
+            <p class="text-gray-400 text-sm max-w-xl mx-auto">
+                Selecione o modelo do seu celular, insira seu token de validação e receba os parâmetros exatos de DP, Mira e Sensibilidade para seu dispositivo.
+            </p>
+        </div>
+
+        <!-- Card de Configuração -->
+        <div class="bg-cardBg border border-cardBorder rounded-2xl p-6 md:p-8 shadow-2xl relative">
+            
+            <div class="space-y-6">
+                <!-- Marca & Modelo Selector -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <!-- Seleção de Marca -->
+                    <div>
+                        <label class="block text-xs font-bold uppercase tracking-wider text-gray-300 mb-2 flex items-center gap-2">
+                            <i class="fa-solid fa-mobile-screen text-neonOrange"></i>
+                            1. Selecione a Marca
+                        </label>
+                        <select id="brandSelect" onchange="updateModels()" class="w-full bg-darkBg border border-cardBorder focus:border-neonOrange focus:ring-1 focus:ring-neonOrange rounded-xl p-3.5 text-white font-medium outline-none transition-all cursor-pointer">
+                            <option value="">Selecione a marca...</option>
+                        </select>
+                    </div>
+
+                    <!-- Seleção de Modelo -->
+                    <div>
+                        <label class="block text-xs font-bold uppercase tracking-wider text-gray-300 mb-2 flex items-center gap-2">
+                            <i class="fa-solid fa-microchip text-neonOrange"></i>
+                            2. Selecione o Modelo
+                        </label>
+                        <select id="modelSelect" disabled class="w-full bg-darkBg border border-cardBorder focus:border-neonOrange focus:ring-1 focus:ring-neonOrange rounded-xl p-3.5 text-white font-medium outline-none transition-all cursor-pointer disabled:opacity-40 disabled:cursor-not-allowed">
+                            <option value="">Aguardando seleção da marca...</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Campo para Código VIP -->
+                <div class="pt-2">
+                    <label class="block text-xs font-bold uppercase tracking-wider text-gray-300 mb-2 flex items-center justify-between">
+                        <span class="flex items-center gap-2">
+                            <i class="fa-solid fa-key text-neonOrange"></i>
+                            3. Código de Liberação VIP
+                        </span>
+                        <span class="text-[11px] text-neonOrange hover:underline cursor-pointer" onclick="openPaymentModal()">Não tem o código?</span>
+                    </label>
+                    <div class="relative">
+                        <input type="text" id="secretCodeInput" placeholder="Cole seu código de 39 dígitos aqui..." class="w-full bg-darkBg border border-cardBorder focus:border-neonOrange focus:ring-1 focus:ring-neonOrange rounded-xl p-3.5 pr-10 text-white font-mono text-sm outline-none transition-all">
+                        <i class="fa-solid fa-lock absolute right-3.5 top-1/2 -translate-y-1/2 text-gray-500"></i>
+                    </div>
+                </div>
+
+                <!-- Botão Gerar -->
+                <button onclick="handleGenerate()" class="w-full py-4 rounded-xl bg-gradient-to-r from-neonOrange to-orange-600 hover:from-orange-500 hover:to-neonOrange text-black font-tech font-extrabold text-lg tracking-wider transition-all duration-300 shadow-lg shadow-neonOrange/20 hover:shadow-neonOrange/40 hover:scale-[1.01] active:scale-[0.99] flex items-center justify-center gap-3">
+                    <i class="fa-solid fa-crosshair text-xl"></i>
+                    GERAR SENSIBILIDADE VIP
+                </button>
+            </div>
+
+            <!-- Loader State -->
+            <div id="loaderArea" class="hidden mt-8 py-8 border-t border-cardBorder text-center">
+                <div class="inline-block relative w-16 h-16 mb-4">
+                    <div class="w-16 h-16 rounded-full border-4 border-neonOrange/20 border-t-neonOrange animate-spin"></div>
+                    <i class="fa-solid fa-gear text-neonOrange absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-xl animate-pulse"></i>
+                </div>
+                <h3 class="font-tech text-lg text-neonOrange font-bold tracking-wide animate-pulse">CALCULANDO SENSIBILIDADE PERFEITA...</h3>
+                <p class="text-xs text-gray-400 mt-1">Ajustando miras e DPI para melhor precisão</p>
+            </div>
+
+            <!-- Area de Resultado da Sensi -->
+            <div id="resultArea" class="hidden mt-8 pt-8 border-t border-cardBorder">
+                <div class="flex items-center justify-between mb-6">
+                    <div>
+                        <span class="text-xs text-neonOrange font-mono uppercase font-semibold">Configuração Encontrada</span>
+                        <h3 id="resultDeviceTitle" class="font-tech text-xl text-white font-bold">DEVICE_NAME</h3>
+                    </div>
+                    <span class="bg-neonGreen/10 text-neonGreen border border-neonGreen/30 text-xs px-3 py-1 rounded-full font-semibold flex items-center gap-1.5">
+                        <i class="fa-solid fa-check-circle"></i> Otimizado
+                    </span>
+                </div>
+
+                <!-- Sensibilidade Sliders/Valores -->
+                <div class="grid grid-cols-2 md:grid-cols-3 gap-4 mb-6">
+                    <div class="bg-darkBg p-4 rounded-xl border border-cardBorder text-center">
+                        <span class="text-xs text-gray-400 font-medium">Geral</span>
+                        <div id="sensGeral" class="font-tech text-2xl font-bold text-neonOrange mt-1">0</div>
+                    </div>
+                    <div class="bg-darkBg p-4 rounded-xl border border-cardBorder text-center">
+                        <span class="text-xs text-gray-400 font-medium">Ponto Vermelho</span>
+                        <div id="sensRedDot" class="font-tech text-2xl font-bold text-neonOrange mt-1">0</div>
+                    </div>
+                    <div class="bg-darkBg p-4 rounded-xl border border-cardBorder text-center">
+                        <span class="text-xs text-gray-400 font-medium">Mira 2x</span>
+                        <div id="sens2x" class="font-tech text-2xl font-bold text-neonOrange mt-1">0</div>
+                    </div>
+                    <div class="bg-darkBg p-4 rounded-xl border border-cardBorder text-center">
+                        <span class="text-xs text-gray-400 font-medium">Mira 4x</span>
+                        <div id="sens4x" class="font-tech text-2xl font-bold text-neonOrange mt-1">0</div>
+                    </div>
+                    <div class="bg-darkBg p-4 rounded-xl border border-cardBorder text-center">
+                        <span class="text-xs text-gray-400 font-medium">AWM</span>
+                        <div id="sensAWM" class="font-tech text-2xl font-bold text-neonOrange mt-1">0</div>
+                    </div>
+                    <div class="bg-darkBg p-4 rounded-xl border border-cardBorder text-center">
+                        <span class="text-xs text-gray-400 font-medium">Olhadinha</span>
+                        <div id="sensOlhadinha" class="font-tech text-2xl font-bold text-neonOrange mt-1">0</div>
+                    </div>
+                </div>
+
+                <!-- DPI e Botão de Atirar -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div class="p-4 rounded-xl bg-gradient-to-r from-darkBg to-cardBg border border-neonOrange/30 flex items-center justify-between">
+                        <div class="flex items-center gap-3">
+                            <i class="fa-solid fa-sliders text-neonOrange text-xl"></i>
+                            <div>
+                                <span class="text-xs text-gray-400 block">DPI Recomendada</span>
+                                <span id="sensDPI" class="font-tech text-xl font-bold text-white">0 DPI</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="p-4 rounded-xl bg-gradient-to-r from-darkBg to-cardBg border border-neonOrange/30 flex items-center justify-between">
+                        <div class="flex items-center gap-3">
+                            <i class="fa-solid fa-circle-dot text-neonOrange text-xl"></i>
+                            <div>
+                                <span class="text-xs text-gray-400 block">Tamanho do Botão</span>
+                                <span id="sensBtn" class="font-tech text-xl font-bold text-white">0%</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-4 p-3 bg-neonOrange/10 rounded-lg border border-neonOrange/20 text-xs text-gray-300 text-center">
+                    <i class="fa-solid fa-lightbulb text-neonOrange mr-1"></i> Dica: Reinicie o jogo após aplicar a DPI para otimização máxima da taxa de quadros.
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Seção de Instrução / Pagamento Rápido -->
+        <div class="mt-8 bg-cardBg border border-cardBorder rounded-2xl p-6 flex flex-col md:flex-row items-center justify-between gap-6">
+            <div class="space-y-1 text-center md:text-left">
+                <h3 class="font-tech font-bold text-white text-lg flex items-center gap-2 justify-center md:justify-start">
+                    <i class="fa-solid fa-qrcode text-neonOrange"></i>
+                    Ainda não possui o código?
+                </h3>
+                <p class="text-xs text-gray-400">Faça o PIX de apenas R$ 0,50 e receba seu código de liberação no direct.</p>
+            </div>
+            <button onclick="openPaymentModal()" class="px-6 py-3 rounded-xl bg-darkBg border border-neonOrange text-neonOrange hover:bg-neonOrange hover:text-black font-semibold text-sm transition-all flex items-center gap-2 whitespace-nowrap">
+                <i class="fa-solid fa-wallet"></i>
+                Adquirir Código (R$ 0,50)
+            </button>
+        </div>
+
+    </main>
+
+    <!-- Modal Customizado (Erro / Pagamento PIX) -->
+    <div id="paymentModal" class="fixed inset-0 bg-black/80 backdrop-blur-md z-50 hidden flex items-center justify-center p-4">
+        <div class="bg-cardBg border border-neonOrange rounded-2xl max-w-md w-full p-6 shadow-2xl box-glow-orange-lg relative animate-in fade-in zoom-in duration-200">
+            
+            <!-- Fechar Modal -->
+            <button onclick="closePaymentModal()" class="absolute top-4 right-4 text-gray-400 hover:text-white transition-colors">
+                <i class="fa-solid fa-xmark text-xl"></i>
+            </button>
+
+            <!-- Header Modal -->
+            <div class="text-center mb-6">
+                <div class="w-12 h-12 rounded-full bg-neonOrange/20 border border-neonOrange text-neonOrange flex items-center justify-center mx-auto mb-3">
+                    <i class="fa-solid fa-lock text-xl"></i>
+                </div>
+                <h3 class="font-tech text-xl font-bold text-white">Acesso Restrito</h3>
+                <p id="modalErrorMessage" class="text-xs text-neonOrange font-medium mt-1">Código incorreto ou ausente! Libere sua sensi abaixo.</p>
+            </div>
+
+            <!-- Passo a Passo PIX -->
+            <div class="space-y-4 bg-darkBg p-4 rounded-xl border border-cardBorder">
+                <div class="flex items-center justify-between text-xs pb-2 border-b border-cardBorder">
+                    <span class="text-gray-400">Valor do Acesso:</span>
+                    <span class="font-bold text-neonGreen text-sm">R$ 0,50</span>
+                </div>
+
+                <!-- Chave PIX -->
+                <div>
+                    <label class="block text-[11px] text-gray-400 mb-1 font-semibold uppercase">Chave PIX (E-mail):</label>
+                    <div class="flex items-center gap-2">
+                        <input type="text" readonly value="betaniaferreiradacruz@gmail.com" id="pixKeyInput" class="w-full bg-cardBg border border-cardBorder rounded-lg px-3 py-2 text-xs text-gray-200 font-mono outline-none">
+                        <button onclick="copyPixKey()" class="px-3 py-2 bg-neonOrange/20 hover:bg-neonOrange/30 text-neonOrange border border-neonOrange/40 rounded-lg text-xs font-bold transition-all whitespace-nowrap flex items-center gap-1">
+                            <i class="fa-solid fa-copy"></i>
+                            <span id="copyBtnText">Copiar</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Passos -->
+                <ol class="text-xs text-gray-300 space-y-1.5 list-decimal list-inside font-medium pt-1">
+                    <li>Copie a chave PIX e faça o pagamento de <b>R$ 0,50</b>.</li>
+                    <li>Envie o comprovante para o Instagram do dono.</li>
+                    <li>Receba o código VIP e cole no site para liberar!</li>
+                </ol>
+            </div>
+
+            <!-- Botão Enviar Comprovante -->
+            <div class="mt-6 space-y-2">
+                <a href="https://www.instagram.com/ravvziin/" target="_blank" rel="noopener noreferrer" class="w-full py-3 rounded-xl bg-gradient-to-r from-neonOrange to-orange-600 text-black font-bold text-sm tracking-wide flex items-center justify-center gap-2 hover:opacity-90 transition-all shadow-md">
+                    <i class="fa-brands fa-instagram text-lg"></i>
+                    ENVIAR COMPROVANTE NO INSTA
+                </a>
+                <button onclick="closePaymentModal()" class="w-full py-2 text-xs text-gray-400 hover:text-white transition-colors">
+                    Já tenho meu código, fechar
+                </button>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Toast Notification Customizado -->
+    <div id="toastNotification" class="fixed bottom-5 right-5 bg-cardBg border border-neonOrange text-white px-4 py-3 rounded-xl shadow-2xl hidden items-center gap-3 z-50">
+        <i class="fa-solid fa-circle-check text-neonGreen text-lg"></i>
+        <span id="toastText" class="text-xs font-semibold">Chave PIX copiada com sucesso!</span>
+    </div>
+
+    <!-- Footer -->
+    <footer class="border-t border-cardBorder/60 py-6 mt-12 bg-darkBg text-center text-xs text-gray-500">
+        <div class="max-w-6xl mx-auto px-4 space-y-2">
+            <p>© 2026 Neo Sensi VIP. Todos os direitos reservados.</p>
+            <p class="text-[11px] text-gray-600">Desenvolvido com alta precisão para Free Fire.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript Data and Logic -->
+    <script>
+        // Código secreto obrigatório
+        const SECRET_CODE = "938493498293829382932224089437290003984";
+
+        // Banco de Dados Completo de Celulares
+        const devicesData = {
+            "Apple (iPhone)": [
+                "iPhone 8 / 8 Plus", "iPhone X / XR / XS Max",
+                "iPhone 11 / 11 Pro / 11 Pro Max", "iPhone 12 / 12 Mini / 12 Pro / 12 Pro Max",
+                "iPhone 13 / 13 Mini / 13 Pro / 13 Pro Max", "iPhone 14 / 14 Plus / 14 Pro / 14 Pro Max",
+                "iPhone 15 / 15 Plus / 15 Pro / 15 Pro Max", "iPhone 16 / 16 Pro / 16 Pro Max"
+            ],
+            "Samsung": [
+                "Galaxy A10 / A12 / A13 / A14 / A15", "Galaxy A22 / A23 / A24 / A25",
+                "Galaxy A32 / A33 / A34 / A35", "Galaxy A52 / A53 / A54 / A55",
+                "Galaxy A71 / A72 / A73", "Galaxy M23 / M34 / M54",
+                "Galaxy S20 / S20 FE / S20 Ultra", "Galaxy S21 / S21 FE / S21 Ultra",
+                "Galaxy S22 / S22 Plus / S22 Ultra", "Galaxy S23 / S23 FE / S23 Ultra",
+                "Galaxy S24 / S24 Plus / S24 Ultra", "Galaxy Z Flip 4 / 5", "Galaxy Z Fold 4 / 5"
+            ],
+            "Xiaomi": [
+                "Redmi 9 / 9A / 9C", "Redmi 10 / 10C / 12 / 13",
+                "Redmi Note 9 / Note 9 Pro", "Redmi Note 10 / Note 10 Pro",
+                "Redmi Note 11 / Note 11S / Note 11 Pro", "Redmi Note 12 / Note 12S / Note 12 Pro 5G",
+                "Redmi Note 13 / Note 13 Pro / Note 13 Pro+ 5G",
+                "Xiaomi 11T / 11T Pro", "Xiaomi 12 / 12X / 12 Pro", "Xiaomi 13 / 13 Pro / 13 Lite", "Xiaomi 14 / 14 Ultra"
+            ],
+            "POCO": [
+                "Poco M3 / M4 Pro / M5 / M6 Pro",
+                "Poco X3 NFC / Poco X3 Pro / Poco X3 GT",
+                "Poco X4 Pro 5G / Poco X5 5G / Poco X5 Pro 5G",
+                "Poco X6 / Poco X6 Pro 5G",
+                "Poco F3 / Poco F4 / Poco F4 GT / Poco F5 / Poco F5 Pro / Poco F6 / Poco F6 Pro"
+            ],
+            "Motorola": [
+                "Moto G8 / G8 Power / G9 / G9 Plus",
+                "Moto G22 / G23 / G32 / G34",
+                "Moto G52 / G53 / G54 / G73 / G84 5G",
+                "Moto Edge 20 / Edge 20 Pro",
+                "Moto Edge 30 / Edge 30 Neo / Edge 30 Ultra",
+                "Moto Edge 40 / Edge 40 Neo / Edge 50 Pro / Edge 50 Ultra"
+            ],
+            "Realme": [
+                "Realme C30 / C35 / C53 / C55 / C67",
+                "Realme 7 / 8 / 9 / 10 / 11 / 12 Pro+ 5G",
+                "Realme GT Master Edition / GT Neo 2 / GT Neo 3 / GT 5"
+            ],
+            "Infinix": [
+                "Infinix Hot 11 / Hot 12 / Hot 20 / Hot 30 / Hot 40 Pro",
+                "Infinix Note 12 / Note 30 5G / Note 40 Pro",
+                "Infinix Zero 5G / Zero Ultra / GT 10 Pro"
+            ],
+            "ASUS ROG": [
+                "ROG Phone 3", "ROG Phone 5 / 5s", "ROG Phone 6 / 6 Pro", "ROG Phone 7 / 7 Ultimate", "ROG Phone 8 / 8 Pro"
+            ]
+        };
+
+        // Inicializar Marcas no Dropdown
+        window.onload = function() {
+            const brandSelect = document.getElementById("brandSelect");
+            for (let brand in devicesData) {
+                let opt = document.createElement("option");
+                opt.value = brand;
+                opt.textContent = brand;
+                brandSelect.appendChild(opt);
+            }
+        };
+
+        // Atualizar Modelos de acordo com a marca selecionada
+        function updateModels() {
+            const brandSelect = document.getElementById("brandSelect");
+            const modelSelect = document.getElementById("modelSelect");
+            const selectedBrand = brandSelect.value;
+
+            modelSelect.innerHTML = "";
+            
+            if (!selectedBrand) {
+                modelSelect.disabled = true;
+                let opt = document.createElement("option");
+                opt.textContent = "Aguardando seleção da marca...";
+                modelSelect.appendChild(opt);
+                return;
+            }
+
+            modelSelect.disabled = false;
+            let defaultOpt = document.createElement("option");
+            defaultOpt.value = "";
+            defaultOpt.textContent = "Selecione o modelo...";
+            modelSelect.appendChild(defaultOpt);
+
+            devicesData[selectedBrand].forEach(model => {
+                let opt = document.createElement("option");
+                opt.value = model;
+                opt.textContent = model;
+                modelSelect.appendChild(opt);
+            });
+        }
+
+        // Lógica ao Clicar em Gerar
+        function handleGenerate() {
+            const brand = document.getElementById("brandSelect").value;
+            const model = document.getElementById("modelSelect").value;
+            const code = document.getElementById("secretCodeInput").value.trim();
+
+            if (!brand || !model) {
+                showToast("Selecione a marca e o modelo do seu celular primeiro!");
+                return;
+            }
+
+            // Validação do Código VIP
+            if (code !== SECRET_CODE) {
+                openPaymentModal();
+                return;
+            }
+
+            // Ocultar resultados anteriores
+            document.getElementById("resultArea").classList.add("hidden");
+            
+            // Exibir Loader
+            const loaderArea = document.getElementById("loaderArea");
+            loaderArea.classList.remove("hidden");
+
+            // Simulação de Cálculo de Sensibilidade
+            setTimeout(() => {
+                loaderArea.classList.add("hidden");
+                generateSensibilityValues(model);
+                document.getElementById("resultArea").classList.remove("hidden");
+                
+                // Scroll suave para os resultados
+                document.getElementById("resultArea").scrollIntoView({ behavior: 'smooth' });
+            }, 1800);
+        }
+
+        // Algoritmo Gerador de Sensi Balanceada
+        function generateSensibilityValues(device) {
+            document.getElementById("resultDeviceTitle").textContent = device.toUpperCase();
+
+            // Sensi Alta e Ajustada
+            const geral = Math.floor(Math.random() * (100 - 94 + 1)) + 94;
+            const redDot = Math.floor(Math.random() * (100 - 92 + 1)) + 92;
+            const mira2x = Math.floor(Math.random() * (100 - 90 + 1)) + 90;
+            const mira4x = Math.floor(Math.random() * (100 - 88 + 1)) + 88;
+            const awm = Math.floor(Math.random() * (60 - 35 + 1)) + 35;
+            const olhadinha = Math.floor(Math.random() * (80 - 50 + 1)) + 50;
+
+            // DPI Ajustada por marca/modelo
+            const isIphone = device.toLowerCase().includes("iphone");
+            const dpi = isIphone ? "Padrão iOS (Sem DPI)" : (Math.floor(Math.random() * (850 - 550 + 1)) + 550) + " DPI";
+            const btnSize = (Math.floor(Math.random() * (58 - 42 + 1)) + 42) + "%";
+
+            // Atribuição na UI
+            document.getElementById("sensGeral").textContent = geral;
+            document.getElementById("sensRedDot").textContent = redDot;
+            document.getElementById("sens2x").textContent = mira2x;
+            document.getElementById("sens4x").textContent = mira4x;
+            document.getElementById("sensAWM").textContent = awm;
+            document.getElementById("sensOlhadinha").textContent = olhadinha;
+            document.getElementById("sensDPI").textContent = dpi;
+            document.getElementById("sensBtn").textContent = btnSize;
+        }
+
+        // Abrir/Fechar Modal
+        function openPaymentModal() {
+            document.getElementById("paymentModal").classList.remove("hidden");
+        }
+
+        function closePaymentModal() {
+            document.getElementById("paymentModal").classList.add("hidden");
+        }
+
+        // Copiar Chave PIX
+        function copyPixKey() {
+            const pixInput = document.getElementById("pixKeyInput");
+            pixInput.select();
+            pixInput.setSelectionRange(0, 99999); // Para mobile
+
+            try {
+                document.execCommand('copy');
+                const copyBtnText = document.getElementById("copyBtnText");
+                copyBtnText.textContent = "Copiado!";
+                showToast("Chave PIX copiada para a área de transferência!");
+                setTimeout(() => {
+                    copyBtnText.textContent = "Copiar";
+                }, 3000);
+            } catch (err) {
+                showToast("Erro ao copiar, selecione e copie manualmente.");
+            }
+        }
+
+        // Sistema de Toast Notification Customizado
+        function showToast(message) {
+            const toast = document.getElementById("toastNotification");
+            const toastText = document.getElementById("toastText");
+            toastText.textContent = message;
+            
+            toast.classList.remove("hidden");
+            toast.classList.add("flex");
+
+            setTimeout(() => {
+                toast.classList.add("hidden");
+                toast.classList.remove("flex");
+            }, 3500);
+        }
+    </script>
+</body>
+</html>
